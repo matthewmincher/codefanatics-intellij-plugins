@@ -3,7 +3,9 @@
 		<description>
 			Provides task runner replacement for Ctrl-S to trigger once regardless of the number of changed files.
 		</description>
-		<vendor email="matt@codefanatics.co.uk" url="http://www.codefanatics.co.uk" />Code Fanatics</vendor>
+		<vendor email="matt@codefanatics.co.uk" url="http://www.codefanatics.co.uk" >
+			Code Fanatics
+		</vendor>
 		<change-notes>
 		<![CDATA[[
 			Allow plugin to be disabled and bugfixes
