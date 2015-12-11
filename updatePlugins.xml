@@ -1,3 +1,7 @@
 <plugins>
-	<plugin id="CFRsync" url="https://cdn.rawgit.com/matthewmincher/codefanatics-intellij-plugins/master/dist/CodeFanatics Rsync.jar" version="0.2" />
+	<plugin id="CFRsync" url="https://cdn.rawgit.com/matthewmincher/codefanatics-intellij-plugins/master/dist/CodeFanatics Rsync.jar" version="0.2">
+		<description>
+			Provides task runner replacement for Ctrl-S to trigger once regardless of the number of changed files.
+		</description>
+	</plugin>
 </plugins>
