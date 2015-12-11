@@ -1,0 +1,37 @@
+<idea-plugin version="2">
+    <id>uk.co.codefanatics.idea.rsync</id>
+    <name>STC rsync</name>
+    <version>0.2</version>
+    <vendor email="matt@codefanatics.co.uk" url="http://www.codefanatics.co.uk">CodeFanatics</vendor>
+
+    <description><![CDATA[
+      STC rsync plugin
+    ]]></description>
+
+    <change-notes><![CDATA[
+
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="RsyncService" serviceInterface="RsyncService" />
+        <projectConfigurable instance="RsyncConfiguration"/>
+    </extensions>
+
+    <actions>
+        <group id="Rsync.ActionGroup" text="CodeFanatics" description="CodeFanatics actions">
+            <action id="Rsync.Run" class="RsyncRunner" text="Run Rsync" description="Synchonise with server" icon="/icons/runAction.png">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl S"/>
+            </action>
+            <action id="Rsync.Reset" class="RsyncResetter" text="Reset Rsync" description="Unlock Rsync executor" icon="/icons/resetAction.png" />
+            <add-to-group group-id="MainToolBar" anchor="last"/>
+            <add-to-group group-id="MainMenu" anchor="before" relative-to-action="HelpMenu"/>
+        </group>
+    </actions>
+
+</idea-plugin>
