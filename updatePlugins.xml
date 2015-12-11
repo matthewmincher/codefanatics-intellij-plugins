@@ -1,5 +1,6 @@
 <plugins>
 	<plugin id="CFRsync" url="http://www.codefanatics.co.uk/repo/dist/CodeFanatics%20Rsync.jar" version="0.2">
+		<name>CodeFanatics rsync</name>
 		<description>
 			Provides task runner replacement for Ctrl-S to trigger once regardless of the number of changed files.
 		</description>
