@@ -28,6 +28,7 @@ public class RsyncService implements PersistentStateComponent<RsyncService> {
     public String command;
     public String reset;
     public Boolean enabled;
+    public String composer;
 
     public RsyncService getState(){
         return this;

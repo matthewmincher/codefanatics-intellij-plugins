@@ -14,6 +14,7 @@ public class RsyncConfiguration implements Configurable {
     private JTextField txtCommand;
     private JTextField txtReset;
     private JCheckBox enabledCheckBox;
+    private JTextField txtComposer;
 
     public RsyncConfiguration(final Project currentProject){
         _project = currentProject;
@@ -27,6 +28,7 @@ public class RsyncConfiguration implements Configurable {
         service.command = txtCommand.getText();
         service.reset = txtReset.getText();
         service.enabled = enabledCheckBox.isSelected();
+        service.composer = txtComposer.getText();
     }
     public void reset() {
         RsyncService service = RsyncService.getInstance(_project);
@@ -42,6 +44,13 @@ public class RsyncConfiguration implements Configurable {
                 txtReset.setText(service.reset);
             } else {
                 txtReset.setText("");
+            }
+        }
+        if(txtComposer != null){
+            if(service.composer != null){
+                txtComposer.setText(service.composer);
+            } else {
+                txtComposer.setText("");
             }
         }
     }
@@ -75,6 +84,19 @@ public class RsyncConfiguration implements Configurable {
                 }
             }
         }
+
+        if(txtComposer != null){
+            if(service.composer != null){
+                if(!txtComposer.getText().equals(service.composer)){
+                    modified = true;
+                }
+            } else {
+                if(!txtComposer.getText().equals("")){
+                    modified = true;
+                }
+            }
+        }
+
         if(enabledCheckBox != null){
             if(service.enabled != null){
                 if(service.enabled != enabledCheckBox.isSelected()){
@@ -93,7 +115,7 @@ public class RsyncConfiguration implements Configurable {
         return "";
     }
     public String getDisplayName(){
-        return "STC Rsync";
+        return "Code Fanatics Utilities";
     }
 
     private void createUIComponents() {
@@ -104,6 +126,9 @@ public class RsyncConfiguration implements Configurable {
 
         String reset = (service.reset != null ? service.reset : "");
         txtReset = new JTextField(reset);
+
+        String composer = (service.composer != null ? service.composer : "");
+        txtComposer = new JTextField(composer);
 
         enabledCheckBox = new JCheckBox();
         if(service.enabled != null){
